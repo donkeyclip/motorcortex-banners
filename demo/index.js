@@ -1,5 +1,5 @@
-import { loadPlugin, HTMLClip } from "@kissmybutton/motorcortex";
-import Player from "@kissmybutton/motorcortex-player";
+import { loadPlugin, HTMLClip } from "@donkeyclip/motorcortex";
+import Player from "@donkeyclip/motorcortex-player";
 import BannersDefinition from "../dist/motorcortex-banners.umd";
 
 const Plugin = loadPlugin(BannersDefinition);
