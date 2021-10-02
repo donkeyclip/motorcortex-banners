@@ -100,7 +100,7 @@
     "browserslist": "4.16.6",
     "caniuse-lite": "1.0.30001248",
     "commitizen": "3.1.2",
-    "concurrently": "4.1.2",
+    "concurrently": "6.3.0",
     "coveralls": "3.1.1",
     "cz-conventional-changelog": "2.1.0",
     "es6-promise": "4.2.8",
