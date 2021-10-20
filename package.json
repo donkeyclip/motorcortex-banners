@@ -15,13 +15,8 @@
     "node": ">=8.3.2"
   },
   "scripts": {
-    "update-force:packages": "./node_modules/npm-check-updates/bin/ncu -u && npm i",
-    "update:packages": "npm update --save/--save-dev",
-    "concurrently": "concurrently -c \"cyan.bold,magenta.bold\" --names \"JS,Styles\"",
-    "lint:styles": "stylelint \"src/**.css\" \"src/**/*.scss\" --config .stylelintrc.json",
-    "lint:js": "eslint -c .eslintrc src/**/*.js",
-    "lint": "npm run concurrently \"npm:lint:js\" \"npm:lint:styles\"",
-    "lint:fix": "npm run concurrently  \"npm:lint:js -- --fix\" \"npm:lint:styles -- --fix\"",
+    "lint": "eslint -c .eslintrc src/**/*.js",
+    "lint:fix": "npm run lint -- --fix",
     "build": "npm run build:lib && npm run build:demo",
     "build:lib": "rollup -c",
     "start": "npm run build:lib && concurrently -c \"cyan.bold,magenta.bold\" \"npm:build:lib -- -w\"  \"npm:start:demo\" ",
@@ -29,7 +24,6 @@
     "build:demo": "webpack --mode=production --config ./demo/webpack.config.js",
     "test": "HERE GOES YOUR TEST TASK",
     "test:prod": "npm run lint",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "commit": "git-cz",
     "prebuild": "rimraf dist",
     "prepare": "husky install"
@@ -42,10 +36,6 @@
     "linters": {
       "*.json": [
         "prettier --write",
-        "git add"
-      ],
-      "*.{css,scss}": [
-        "stylelint  \"src/**.css\" \"src/**/*.scss\" --config .stylelintrc.json --fix",
         "git add"
       ],
       "*.{js,jsx}": [
@@ -79,32 +69,32 @@
   "devDependencies": {
     "@babel/cli": "7.14.8",
     "@babel/core": "7.14.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/plugin-syntax-jsx": "^7.14.5",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@babel/preset-env": "7.14.8",
     "@commitlint/cli": "7.6.1",
     "@commitlint/config-conventional": "7.6.0",
     "@donkeyclip/motorcortex": "^7.4.0",
     "@donkeyclip/motorcortex-anime": "^2.1.16",
     "@donkeyclip/motorcortex-player": "^2.2.1",
-    "@rollup/plugin-babel": "5.3.0",
-    "@rollup/plugin-commonjs": "18.1.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^18.1.0",
     "@rollup/plugin-json": "4.1.0",
-    "@rollup/plugin-node-resolve": "11.2.1",
+    "@rollup/plugin-node-resolve": "^11.2.1",
     "@semantic-release/changelog": "3.0.6",
     "@semantic-release/git": "7.0.18",
     "@semantic-release/github": "5.5.8",
     "@semantic-release/npm": "5.3.5",
-    "@size-limit/preset-big-lib": "5.0.4",
-    "babel-eslint": "10.1.0",
+    "@size-limit/preset-big-lib": "^6.0.3",
     "babel-loader": "8.2.2",
-    "babel-preset-es2015-node5": "1.2.0",
     "browserslist": "4.16.6",
     "caniuse-lite": "1.0.30001248",
     "commitizen": "3.1.2",
-    "concurrently": "4.1.2",
-    "coveralls": "3.1.1",
+    "concurrently": "^4.1.2",
+    "core-js": "^3.18.3",
     "cz-conventional-changelog": "2.1.0",
-    "es6-promise": "4.2.8",
-    "eslint": "5.16.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "3.6.0",
     "eslint-config-standard": "12.0.0",
     "eslint-plugin-babel": "5.3.1",
@@ -113,34 +103,22 @@
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-promise": "4.3.1",
     "eslint-plugin-standard": "4.1.0",
-    "exports-loader": "0.7.0",
     "husky": "^7.0.0",
-    "imports-loader": "0.8.0",
-    "json-stringify-safe": "5.0.1",
     "lint-staged": "8.2.1",
-    "node-sass": "4.14.1",
-    "npm-check-updates": "*",
-    "npx": "*",
     "prettier": "1.19.1",
     "rimraf": "2.7.1",
     "rollup": "2.55.1",
-    "rollup-plugin-babel": "4.4.0",
-    "rollup-plugin-commonjs": "10.1.0",
-    "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-terser": "7.0.2",
     "semantic-release": "^15.13.2",
-    "shelljs": "0.8.4",
-    "size-limit": "5.0.4",
+    "size-limit": "^6.0.3",
     "webpack": "5.53.0",
     "webpack-cli": "4.8.0",
-    "webpack-dev-server": "3.11.2",
-    "whatwg-fetch": "3.6.2"
+    "webpack-dev-server": "3.11.2"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run test:prod"
+      "pre-commit": "lint-staged"
     }
   }
 }
