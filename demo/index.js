@@ -1,6 +1,6 @@
-import { loadPlugin, HTMLClip } from "@donkeyclip/motorcortex";
+import { HTMLClip, loadPlugin } from "@donkeyclip/motorcortex";
 import Player from "@donkeyclip/motorcortex-player";
-import BannersDefinition from "../dist/motorcortex-banners.umd";
+import BannersDefinition from "../dist/motorcortex-banners.esm";
 
 const Plugin = loadPlugin(BannersDefinition);
 
@@ -18,7 +18,7 @@ const host = document.getElementById("clip");
 
 const containerParams = {
   width: "800px",
-  height: "600px"
+  height: "600px",
 };
 
 const clip = new HTMLClip({
@@ -30,9 +30,9 @@ const clip = new HTMLClip({
   fonts: [
     {
       type: `google-font`,
-      src: `https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,800;1,700;1,800;1,900&display=swap`
-    }
-  ]
+      src: `https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,800;1,700;1,800;1,900&display=swap`,
+    },
+  ],
 });
 
 const overlayColor = ["#BB00FF91", "#00FFE791", "#FFD70091"];
@@ -49,10 +49,10 @@ const BannerA = new Plugin.BannerA(
     txtGroupSize: 40,
     strokeText: "WE WIN THE GAME IN THE CSS",
     mainColor: "#ffff00",
-    centerText: "Yeyey"
+    centerText: "Yeyey",
   },
   {
-    selector: ".container1"
+    selector: ".container1",
   }
 );
 
