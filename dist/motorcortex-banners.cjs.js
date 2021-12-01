@@ -5112,7 +5112,7 @@ var BannerAValidation = {
 };
 
 var name = "@kissmybutton/motorcortex-banners";
-var version = "0.0.14";
+var version = "0.0.15";
 
 var index = {
   npm_name: name,
