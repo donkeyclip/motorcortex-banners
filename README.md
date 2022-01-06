@@ -53,7 +53,7 @@ const BannerA = new Plugin.BannerA(
 | height       |        height of incident        |    num |
 | bgUrl        |       url of the bg image        | string |
 | imgWidth     |  the original widht of the img   |    num |
-| imgHeight    |  the original heigth of the img  |    num |
+| imgHeight    |  the original height of the img  |    num |
 | txtGroup     |       the transparent text       | string |
 | txtGroupSize | the size of the transparent text |    num |
 | mainColor    |    the main color of the clip    |  color |
