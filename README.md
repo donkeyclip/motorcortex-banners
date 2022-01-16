@@ -2,7 +2,7 @@
 
 **Table of Contents**
 
-- [MotorMortex-Banners](#motorcortex-banners)
+- [MotorCortex-Banners](#motorcortex-banners)
   - [Demo](#demo)
 - [Intro / Features](#intro--features)
 - [Getting Started](#getting-started)
