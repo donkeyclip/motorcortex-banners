@@ -20,7 +20,7 @@
 [Check it out here](https://donkeyclip.github.io/motorcortex-banners/demo/index.html)
 
 # Intro / Features
-If you are looking for a simple way to create a startling banner, MotorCortex-Banners is the right plugin for your clip.
+If you are looking for a simple way to create a starting banner, MotorCortex-Banners is the right plugin for your clip.
 
 This Plugin exposes one Incident:
 - BannerA
