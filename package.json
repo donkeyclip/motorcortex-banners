@@ -1,14 +1,14 @@
 {
-  "name": "@kissmybutton/motorcortex-banners",
+  "name": "@donkeyclip/motorcortex-banners",
   "version": "0.0.15",
   "description": "banners plugin for MotorCortex",
   "main": "dist/motorcortex-banners.cjs.js",
   "module": "dist/motorcortex-banners.esm.js",
   "browser": "dist/motorcortex-banners.umd.js",
-  "author": "KissMyButton PC (kissmybutton.gr) <opensource@kissmybutton.gr>",
+  "author": "Donkeyclip (donkeyclip.com) <opensource@donkeyclip.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kissmybutton/motorcortex-banners.git"
+    "url": "https://github.com/donkeyclip/motorcortex-banners.git"
   },
   "license": "MIT",
   "engines": {
