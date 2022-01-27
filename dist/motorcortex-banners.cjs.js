@@ -5347,7 +5347,7 @@ var BannerAValidation = {
   }
 };
 
-var name = "@kissmybutton/motorcortex-banners";
+var name = "@donkeyclip/motorcortex-banners";
 var version = "0.0.15";
 
 var index = {

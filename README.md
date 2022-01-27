@@ -1,31 +1,56 @@
-# motorcortex-banners
+# MotorCortex-Banners
+
+**Table of Contents**
+
+- [MotorCortex-Banners](#motorcortex-banners)
+  - [Demo](#demo)
+- [Intro / Features](#intro--features)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Importing and Loading](#importing-and-loading)
+- [Creating Incidents](#creating-incidents)
+  - [BannerA](#bannera)
+- [Adding Incidents in your clip](#adding-incidents-in-your-clip)
+- [Contributing](#contributing)
+- [License](#license)
+- [Sponsored by](#sponsored-by)
 
 ## Demo
 
-[Check it out here](https://kissmybutton.github.io/motorcortex-banners/demo/index.html)
+[Check it out here](https://donkeyclip.github.io/motorcortex-banners/demo/index.html)
+
+# Intro / Features
+If you are looking for a simple way to create a startling banner, MotorCortex-Banners is the right plugin for your clip.
+
+This Plugin exposes one Incident:
+- BannerA
+
+# Getting Started
 
 ## Installation
 
 ```bash
-$ npm install --save @kissmybutton/motorcortex-banners
+$ npm install --save @donkeyclip/motorcortex-banners
 # OR
-$ yarn add @kissmybutton/motorcortex-banners
+$ yarn add @donkeyclip/motorcortex-banners
 ```
 
-## Loading
+## Importing and loading
 
 ```javascript
-const MotorCortex = require("@kissmybutton/motorcortex");
-const BannersDefinition = require("@kissmybutton/motorcortex-banners");
-const Plugin = MotorCortex.loadPlugin(BannersDefinition);
+import { loadPlugin } from "@donkeyclip/motorcortex";
+import BannersDefinition from "@donkeyclip/motorcortex-banners";
+const Banner = loadPlugin(BannersDefinition);
 ```
 
-# Create incident
+# Creating Incidents
 
 ## BannerA
 
+The only thing you have to do is to give values to the attributes you want to include in your clip.
+
 ```javascript
-const BannerA = new Plugin.BannerA(
+const BannerA = new Banner.BannerA(
   {
     width: 400,
     height: 700,
@@ -58,3 +83,27 @@ const BannerA = new Plugin.BannerA(
 | txtGroupSize | the size of the transparent text |    num |
 | mainColor    |    the main color of the clip    |  color |
 | centerText   |      the text with shadows       | string |
+| overlayColor |      list of hex colors          | string |
+
+# Adding Incidents in your clip
+
+```javascript
+clipName.addIncident(incidentName,startTime);
+```
+
+# Contributing 
+
+In general, we follow the "fork-and-pull" Git workflow, so if you want to submit patches and additions you should follow the next steps:
+1.	**Fork** the repo on GitHub
+2.	**Clone** the project to your own machine
+3.	**Commit** changes to your own branch
+4.	**Push** your work back up to your fork
+5.	Submit a **Pull request** so that we can review your changes
+
+
+# License
+
+[MIT License](https://opensource.org/licenses/MIT)
+
+# Sponsored by
+[<img src="https://presskit.donkeyclip.com/logos/donkey%20clip%20logo.svg" width=250></img>](https://donkeyclip.com)
