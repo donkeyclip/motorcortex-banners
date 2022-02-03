@@ -1,6 +1,6 @@
 {
   "name": "@donkeyclip/motorcortex-banners",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "banners plugin for MotorCortex",
   "main": "dist/motorcortex-banners.cjs.js",
   "module": "dist/motorcortex-banners.esm.js",

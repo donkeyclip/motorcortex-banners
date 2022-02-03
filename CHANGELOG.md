@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.0.16](https://www.github.com/donkeyclip/motorcortex-banners/compare/v0.0.15...v0.0.16) (2022-02-03)
+
+
+### Bug Fixes
+
+* remove anime plugin and fix demo ([8c232ad](https://www.github.com/donkeyclip/motorcortex-banners/commit/8c232ad4bd2e852650c1eaa67c940b7f3d39d8ae))
+
 ### [0.0.15](https://www.github.com/kissmybutton/motorcortex-banners/compare/v0.0.14...v0.0.15) (2021-12-01)
 
 
