@@ -41,7 +41,7 @@ const BannerA = new Plugin.BannerA(
   {
     width: 400,
     height: 700,
-    bgUrl: "https://kissmybutton.github.io/motorcortex-banners/demo/bg2.jpg",
+    bgUrl: "https://donkeyclip.github.io/motorcortex-banners/demo/bg2.jpg",
     overlayColor,
     imgWidth: 1002,
     imgHeight: 1280,

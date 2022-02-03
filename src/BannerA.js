@@ -1,6 +1,5 @@
-import { loadPlugin, HTMLClip, Group } from "@donkeyclip/motorcortex";
-import AnimeDefinition from "@donkeyclip/motorcortex-anime";
-const Anime = loadPlugin(AnimeDefinition);
+import {HTMLClip, Group, CSSEffect } from "@donkeyclip/motorcortex";
+
 
 export default class BannerA extends HTMLClip {
   dinamicFontSize(lc, width) {
@@ -449,7 +448,7 @@ export default class BannerA extends HTMLClip {
   }
 
   buildTree() {
-    const box = new Anime.Anime(
+    const box = new CSSEffect(
       {
         animatedAttrs: {
           top: `-${this.attrs.height * 0.1}px`,
@@ -469,7 +468,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const leftImageTop = new Anime.Anime(
+    const leftImageTop = new CSSEffect(
       {
         animatedAttrs: {
           backgroundPositionY: `${this.attrs.height -
@@ -490,7 +489,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const leftImageLeft = new Anime.Anime(
+    const leftImageLeft = new CSSEffect(
       {
         animatedAttrs: {
           backgroundPositionX: `-${this.attrs.imgWidth / 2 -
@@ -515,7 +514,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const rightImageTop = new Anime.Anime(
+    const rightImageTop = new CSSEffect(
       {
         animatedAttrs: {
           backgroundPositionY: `${this.attrs.height -
@@ -536,7 +535,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const rightImageLeft = new Anime.Anime(
+    const rightImageLeft = new CSSEffect(
       {
         animatedAttrs: {
           backgroundPositionX: `-${this.attrs.imgWidth / 2 -
@@ -556,7 +555,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const rightImageLeftWrapper = new Anime.Anime(
+    const rightImageLeftWrapper = new CSSEffect(
       {
         animatedAttrs: {
           width: `${this.attrs.width / 2}px`
@@ -572,7 +571,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const dotedHalfOneOn = new Anime.Anime(
+    const dotedHalfOneOn = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 1
@@ -588,7 +587,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const dotedHalfOneOff = new Anime.Anime(
+    const dotedHalfOneOff = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 0
@@ -604,7 +603,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const dotedOneOn = new Anime.Anime(
+    const dotedOneOn = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 1
@@ -620,7 +619,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const dotedOneOff = new Anime.Anime(
+    const dotedOneOff = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 0
@@ -636,7 +635,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const bg2In = new Anime.Anime(
+    const bg2In = new CSSEffect(
       {
         animatedAttrs: {
           left: "0%"
@@ -652,7 +651,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const bg2InBg = new Anime.Anime(
+    const bg2InBg = new CSSEffect(
       {
         animatedAttrs: {
           backgroundPositionX: "50%"
@@ -671,7 +670,7 @@ export default class BannerA extends HTMLClip {
     const myGroup = new Group();
 
     for (let i = 0; i < this.n; i++) {
-      const textAnimationSize = new Anime.Anime(
+      const textAnimationSize = new CSSEffect(
         {
           animatedAttrs: {
             fontSize: !this.attrs.txtGroupSize
@@ -694,7 +693,7 @@ export default class BannerA extends HTMLClip {
       myGroup.addIncident(textAnimationSize, 500 + 50 * (i + 1));
     }
 
-    const bg2OutBg = new Anime.Anime(
+    const bg2OutBg = new CSSEffect(
       {
         animatedAttrs: {
           width: "0px"
@@ -707,7 +706,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const bgInBg = new Anime.Anime(
+    const bgInBg = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 1
@@ -723,7 +722,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const linesInOut = new Anime.Anime(
+    const linesInOut = new CSSEffect(
       {
         animatedAttrs: {
           left: "-100%",
@@ -740,7 +739,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const circlesWrapper = new Anime.Anime(
+    const circlesWrapper = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 1
@@ -756,7 +755,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const circlesWrapperOp = new Anime.Anime(
+    const circlesWrapperOp = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 0
@@ -777,7 +776,7 @@ export default class BannerA extends HTMLClip {
     for (let i = 1; i <= 3; i++) {
       const ran = `${Math.random() * 360 + "deg"}`;
 
-      const translateX = new Anime.Anime(
+      const translateX = new CSSEffect(
         {
           animatedAttrs: {
             transform: {
@@ -812,7 +811,7 @@ export default class BannerA extends HTMLClip {
       circlesGroup.addIncident(translateX, 500 + 50 * (i + 1));
     }
 
-    const centerTextWrapper = new Anime.Anime(
+    const centerTextWrapper = new CSSEffect(
       {
         animatedAttrs: {
           transform: {
@@ -832,7 +831,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const centerTextAfter = new Anime.Anime(
+    const centerTextAfter = new CSSEffect(
       {
         animatedAttrs: {
           left: "49%",
@@ -850,7 +849,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const centerTextBefore = new Anime.Anime(
+    const centerTextBefore = new CSSEffect(
       {
         animatedAttrs: {
           left: "51%",
@@ -868,7 +867,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const slicedImgWrapper = new Anime.Anime(
+    const slicedImgWrapper = new CSSEffect(
       {
         animatedAttrs: {
           top: "0%"
@@ -884,7 +883,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const slicedImg = new Anime.Anime(
+    const slicedImg = new CSSEffect(
       {
         animatedAttrs: {
           top: "0%"
@@ -900,7 +899,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const slicedImgWrappeClipPath = new Anime.Anime(
+    const slicedImgWrappeClipPath = new CSSEffect(
       {
         animatedAttrs: {
           clipPath: "polygon(0 0, 100% 0, 100% 110%, 0 100%)"
@@ -916,7 +915,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const slicedImgTranformUp = new Anime.Anime(
+    const slicedImgTranformUp = new CSSEffect(
       {
         animatedAttrs: {
           transform: { scale: 1.5 }
@@ -932,7 +931,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const slicedImgTranformDown = new Anime.Anime(
+    const slicedImgTranformDown = new CSSEffect(
       {
         animatedAttrs: {
           transform: { scale: 1 }
@@ -948,7 +947,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const slicedImgWrapperOpacity = new Anime.Anime(
+    const slicedImgWrapperOpacity = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 0
@@ -964,7 +963,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const strokeTextWrapper = new Anime.Anime(
+    const strokeTextWrapper = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 1
@@ -980,7 +979,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const strokeTextCenter = new Anime.Anime(
+    const strokeTextCenter = new CSSEffect(
       {
         animatedAttrs: {
           fontSize: `${this.attrs.width * 0.15}px`,
@@ -1003,7 +1002,7 @@ export default class BannerA extends HTMLClip {
     const strokeTextGroup = new Group();
 
     for (let i = 0; i < this.strokeTextLength; i++) {
-      const strokeTextOutline = new Anime.Anime(
+      const strokeTextOutline = new CSSEffect(
         {
           animatedAttrs: {
             left:
@@ -1027,7 +1026,7 @@ export default class BannerA extends HTMLClip {
       strokeTextGroup.addIncident(strokeTextOutline, 500);
     }
 
-    const bgDistortionOp = new Anime.Anime(
+    const bgDistortionOp = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 0
@@ -1042,7 +1041,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const bgScaleUp = new Anime.Anime(
+    const bgScaleUp = new CSSEffect(
       {
         animatedAttrs: {
           transform: { scale: 1.5 }
@@ -1057,7 +1056,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const bgScaleDown = new Anime.Anime(
+    const bgScaleDown = new CSSEffect(
       {
         animatedAttrs: {
           transform: { scale: 1 }
@@ -1072,7 +1071,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const rngBoxDownIn = new Anime.Anime(
+    const rngBoxDownIn = new CSSEffect(
       {
         animatedAttrs: {
           left: "30%"
@@ -1087,7 +1086,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const yellowUnderLineLeftIn = new Anime.Anime(
+    const yellowUnderLineLeftIn = new CSSEffect(
       {
         animatedAttrs: {
           left: "30%"
@@ -1102,7 +1101,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const yellowUnderLineWidth = new Anime.Anime(
+    const yellowUnderLineWidth = new CSSEffect(
       {
         animatedAttrs: {
           width: "0px"
@@ -1114,7 +1113,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const yellowTransitionWidth = new Anime.Anime(
+    const yellowTransitionWidth = new CSSEffect(
       {
         animatedAttrs: {
           width: "0px"
@@ -1126,7 +1125,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const yellowTransitionLeft = new Anime.Anime(
+    const yellowTransitionLeft = new CSSEffect(
       {
         animatedAttrs: {
           left: "-100%"
@@ -1139,7 +1138,7 @@ export default class BannerA extends HTMLClip {
     );
     const circlesGroup2 = new Group();
 
-    const circlesWrapper2 = new Anime.Anime(
+    const circlesWrapper2 = new CSSEffect(
       {
         animatedAttrs: {
           opacity: 1
@@ -1155,7 +1154,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const circlesWrapper2Position = new Anime.Anime(
+    const circlesWrapper2Position = new CSSEffect(
       {
         animatedAttrs: {
           top: "-33%",
@@ -1172,7 +1171,7 @@ export default class BannerA extends HTMLClip {
     for (let i = 1; i <= 3; i++) {
       const ran = `${Math.random() * 360 + "deg"}`;
 
-      const translateX = new Anime.Anime(
+      const translateX = new CSSEffect(
         {
           animatedAttrs: {
             transform: {
@@ -1205,7 +1204,7 @@ export default class BannerA extends HTMLClip {
       circlesGroup2.addIncident(translateX, 500 + 50 * (i + 1));
     }
 
-    const blackBoxRotate = new Anime.Anime(
+    const blackBoxRotate = new CSSEffect(
       {
         animatedAttrs: {
           transform: {
@@ -1224,7 +1223,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const blackBoxLeftTop = new Anime.Anime(
+    const blackBoxLeftTop = new CSSEffect(
       {
         animatedAttrs: {
           left: "0%"
@@ -1239,7 +1238,7 @@ export default class BannerA extends HTMLClip {
       }
     );
 
-    const blackBoxRightTop = new Anime.Anime(
+    const blackBoxRightTop = new CSSEffect(
       {
         animatedAttrs: {
           left: "0%"
