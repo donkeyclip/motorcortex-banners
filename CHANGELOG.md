@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/donkeyclip/motorcortex-banners/compare/v0.0.16...v0.1.0) (2022-03-22)
+
+
+### Features
+
+* declare mc 8 as compatible ([51a583c](https://github.com/donkeyclip/motorcortex-banners/commit/51a583cc407b615d51c3be8323588c7beb37daad))
+
 ### [0.0.16](https://www.github.com/donkeyclip/motorcortex-banners/compare/v0.0.15...v0.0.16) (2022-02-03)
 
 
