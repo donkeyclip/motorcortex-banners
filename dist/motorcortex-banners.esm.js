@@ -2963,7 +2963,7 @@ var BannerAValidation = {
 };
 
 var name = "@donkeyclip/motorcortex-banners";
-var version = "0.0.16";
+var version = "0.1.0";
 
 var index = {
   npm_name: name,
