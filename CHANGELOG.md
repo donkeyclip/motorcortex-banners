@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/donkeyclip/motorcortex-banners/compare/v0.1.0...v0.2.0) (2022-04-07)
+
+
+### Features
+
+* drop explorer 11 support ([23f9b9b](https://github.com/donkeyclip/motorcortex-banners/commit/23f9b9b3958dcd964f51bbfe28b7681b125b3f1c))
+* update compatibility with motorcortex ([0643f7a](https://github.com/donkeyclip/motorcortex-banners/commit/0643f7a10413c841ed7095b31b635874e8012989))
+
 ## [0.1.0](https://github.com/donkeyclip/motorcortex-banners/compare/v0.0.16...v0.1.0) (2022-03-22)
 
 
