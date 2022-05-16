@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.1](https://github.com/donkeyclip/motorcortex-banners/compare/v0.2.0...v0.2.1) (2022-05-16)
+
+
+### Bug Fixes
+
+* delete commitlint.config.js ([2e3ec45](https://github.com/donkeyclip/motorcortex-banners/commit/2e3ec45b94630198738279b56faf9f66b7983a98))
+
 ## [0.2.0](https://github.com/donkeyclip/motorcortex-banners/compare/v0.1.0...v0.2.0) (2022-04-07)
 
 
