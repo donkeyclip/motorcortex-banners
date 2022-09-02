@@ -20,8 +20,8 @@ class BannerA extends motorcortex.HTMLClip {
 
   get font() {
     return [{
-      type: "google-font",
-      src: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,800;1,700;1,800;1,900&display=swap"
+      type: `google-font`,
+      src: `https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,800;1,700;1,800;1,900&display=swap`
     }];
   }
 
@@ -34,7 +34,7 @@ class BannerA extends motorcortex.HTMLClip {
       this.n = n;
 
       for (let i = 0; i < n; i++) {
-        list.push("<div class=\"txt-group txt-".concat(i, "\">").concat(this.attrs.txtGroup, "</div>"));
+        list.push(`<div class="txt-group txt-${i}">${this.attrs.txtGroup}</div>`);
       }
 
       return list.join("");
@@ -48,29 +48,417 @@ class BannerA extends motorcortex.HTMLClip {
       const list = [];
 
       for (let i = 0; i < strokeTextList.length; i++) {
-        list.push("\n          <div style=\"".concat(style === true ? "top:".concat(_this.attrs.height / strokeTextList.length * i, "px;") : " ", "\" class=\"").concat(className).concat(i, "\">").concat(strokeTextList[i], "</div>"));
+        list.push(`
+          <div style="${style === true ? `top:${_this.attrs.height / strokeTextList.length * i}px;` : " "}" class="${className}${i}">${strokeTextList[i]}</div>`);
       }
 
       return list.join("");
     };
 
-    return "\n    <div class=\"wrapper\">\n      <div class=\"left-image-wrapper\">\n        <div class=\"left-image\"> </div>\n      </div>\n\n      <div class=\"right-image-wrapper\">\n        <div class=\"right-image\"> </div>\n      </div>\n\n      <div  class=\"bg\"></div>\n      <div class=\"bg2\">\n        <div class=\"knockout\">\n          ".concat(textlist, "\n        </div>\n      </div>\n\n      <div class=\"lines-wrapper\">\n        <div class=\"lines lines-1\" style=\"\n          height:  ").concat(this.attrs.height * 0.1 * Math.random(), "px;\n          width: ").concat(this.attrs.width * 0.5 * Math.random().toFixed(2), "px;\n          top:").concat(this.attrs.height * Math.random().toFixed(2), "px;\n          \"></div>\n          \n        <div class=\"lines lines-2\" style=\"\n          height:").concat(this.attrs.height * 0.1 * Math.random(), "px;\n          width: ").concat(this.attrs.width * 0.5 * Math.random().toFixed(2), "px;\n          top:").concat(this.attrs.height * Math.random().toFixed(2), "px;\n        \"></div>\n        <div class=\"lines lines-3\" style=\"\n          height: ").concat(this.attrs.height * 0.1 * Math.random(), "px;\n          width: ").concat(this.attrs.width * 0.5 * Math.random().toFixed(2), "px;\n          top:").concat(this.attrs.height * Math.random().toFixed(2), "px;\n        \"></div>\n      </div>\n\n    \n\n      <div class=\"circles-wrapper\">\n        <div class=\"circle-1 circle\" ></div>\n        <div class=\"circle-2 circle \"></div>\n        <div class=\"circle-3 circle \"></div>\n      </div>\n      <div class=\"flex-center center-text-wrapper\" >\n        <div class=\"center-text\" data-text=\"Yeyey\">\n          ").concat(this.attrs.centerText, "\n        </div>\n        <div class=\"center-text-after\" data-text=\"Yeyey\">\n          ").concat(this.attrs.centerText, "\n        </div>\n        <div class=\"center-text-before\" data-text=\"Yeyey\">\n          ").concat(this.attrs.centerText, "\n        </div>\n        \n      </div>\n\n      <div  class=\"sliced-img-wrapper\">\n        <div class=\"sliced-img\"></div>\n      </div>\n      <div  style=\"opacity: 0;\"class=\"stroke-text-wrapper flex-center\">\n      \n        ").concat(textlistStroke("stroke-text-center txt-stroke-"), "\n        ").concat(textlistStroke("stroke-text-outline txt-stroke-outline-", true), "\n      </div>\n      <div class=\"doted\"></div>\n      <div class=\"doted-half\"></div>\n      <div class=\"rng-box\"></div>\n      <div class=\"yellow-underline\"></div>\n      <div class=\"yellow-transition\"> </div>\n      <div class=\"box\"> </div>\n      <div class=\"leftBlackBox\"></div>\n      <div class=\"rightBlackBox\"></div>\n\t  </div>\n    ");
+    return `
+    <div class="wrapper">
+      <div class="left-image-wrapper">
+        <div class="left-image"> </div>
+      </div>
+
+      <div class="right-image-wrapper">
+        <div class="right-image"> </div>
+      </div>
+
+      <div  class="bg"></div>
+      <div class="bg2">
+        <div class="knockout">
+          ${textlist}
+        </div>
+      </div>
+
+      <div class="lines-wrapper">
+        <div class="lines lines-1" style="
+          height:  ${this.attrs.height * 0.1 * Math.random()}px;
+          width: ${this.attrs.width * 0.5 * Math.random().toFixed(2)}px;
+          top:${this.attrs.height * Math.random().toFixed(2)}px;
+          "></div>
+          
+        <div class="lines lines-2" style="
+          height:${this.attrs.height * 0.1 * Math.random()}px;
+          width: ${this.attrs.width * 0.5 * Math.random().toFixed(2)}px;
+          top:${this.attrs.height * Math.random().toFixed(2)}px;
+        "></div>
+        <div class="lines lines-3" style="
+          height: ${this.attrs.height * 0.1 * Math.random()}px;
+          width: ${this.attrs.width * 0.5 * Math.random().toFixed(2)}px;
+          top:${this.attrs.height * Math.random().toFixed(2)}px;
+        "></div>
+      </div>
+
+    
+
+      <div class="circles-wrapper">
+        <div class="circle-1 circle" ></div>
+        <div class="circle-2 circle "></div>
+        <div class="circle-3 circle "></div>
+      </div>
+      <div class="flex-center center-text-wrapper" >
+        <div class="center-text" data-text="Yeyey">
+          ${this.attrs.centerText}
+        </div>
+        <div class="center-text-after" data-text="Yeyey">
+          ${this.attrs.centerText}
+        </div>
+        <div class="center-text-before" data-text="Yeyey">
+          ${this.attrs.centerText}
+        </div>
+        
+      </div>
+
+      <div  class="sliced-img-wrapper">
+        <div class="sliced-img"></div>
+      </div>
+      <div  style="opacity: 0;"class="stroke-text-wrapper flex-center">
+      
+        ${textlistStroke("stroke-text-center txt-stroke-")}
+        ${textlistStroke("stroke-text-outline txt-stroke-outline-", true)}
+      </div>
+      <div class="doted"></div>
+      <div class="doted-half"></div>
+      <div class="rng-box"></div>
+      <div class="yellow-underline"></div>
+      <div class="yellow-transition"> </div>
+      <div class="box"> </div>
+      <div class="leftBlackBox"></div>
+      <div class="rightBlackBox"></div>
+	  </div>
+    `;
   }
 
   get css() {
     const strokeTextList = this.attrs.strokeText.split(" ");
-    return "\n    .wrapper{\n      width: ".concat(this.attrs.width, "px;\n      height: ").concat(this.attrs.height, "px;\n     \n      display:flex;\n      font-family: 'Poppins', sans-serif;\n    }\n    .box{\n      width: ").concat(this.attrs.width * 0.03, "px;\n      height: ").concat(this.attrs.height * 2.4, ";\n      background: ").concat(this.attrs.mainColor, ";\n      position:absolute;\n      left: ").concat(this.attrs.width / 2, "px;\n    }\n\n    .doted{\n      background-image: radial-gradient(").concat(this.attrs.mainColor, " 16%, #0000 20%);\n      background-position: 0 0;\n      background-size: 16px 14px;\n      height: ").concat(this.attrs.height / 4.5, "px;\n      width: ").concat(this.attrs.width / 2.7, "px;\n      position:absolute;\n      left: 7%;\n      top: 65%\n    }\n\n    .doted,.doted-half{\n      background-image: radial-gradient(").concat(this.attrs.mainColor, " 16%, #0000 20%);\n      background-position: 0 0;\n      background-size: 16px 14px;\n      height: ").concat(this.attrs.height / 4.5, "px;\n      width: ").concat(this.attrs.width / 2.7, "px;\n      position:absolute;\n      left: 7%;\n      top: 65%;\n      opacity: 0;\n    }\n\n    .doted-half{\n      clip-path: polygon(0 31%, 85% 31%, 100% 55%, 15% 55%);\n      left: 65%;\n      top: 7%\n    }\n\n    .lines-wrapper{\n      height: ").concat(this.attrs.height, "px;\n      width: ").concat(this.attrs.width, "px;\n      position: absolute;\n    }\n\n    .lines{\n      background: ").concat(this.attrs.mainColor, ";\n      position: absolute;\n    }\n\n    .left-image-wrapper, .right-image-wrapper{\n      width:").concat(this.attrs.width / 2, "px;\n      overflow: hidden;\n    }\n  \n    .right-image{\n      height: ").concat(this.attrs.imgHeight, "px;\n      width: ").concat(this.attrs.imgWidth, "px;\n      position: relative;\n      background-image: url(").concat(this.attrs.bgUrl, ");\n      background-size: ").concat(this.attrs.imgWidth, "px;\n      transform: scale(1);\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n      flex: 1 0 auto;\n      background-repeat: no-repeat;\n    }\n\n    .left-image{\n      height: ").concat(this.attrs.imgHeight, "px;\n      width: ").concat(this.attrs.imgWidth, "px;\n      position: relative;\n      background-image: url(").concat(this.attrs.bgUrl, ");\n      background-size: ").concat(this.attrs.imgWidth, "px;\n      transform: scale(1);\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n      flex: 1 0 auto;\n    }\n\n    .left-image:after,.right-image:after {\n      content: \"\";\n      display: block;\n      background: linear-gradient(").concat(this.attrs.overlayColor, ");\n      position: absolute;\n      top: 0;\n      bottom: 0;\n      right: 0;\n      left: 0;\n      z-index: -1;\n    }\n    \n    .txt-group{\n      font-size: ").concat(this.attrs.txtGroupSize, "px;\n    }\n\n    .txt-group:nth-of-type(odd){\n      height: 14%;\n    }\n\n    .txt-group:nth-of-type(2n+2) {\n      height: 14%;\n    }\n\n    .knockout {\n      background: url(").concat(this.attrs.bgUrl, ");\n      background-position: 50% 50%;\n      color: red;\n      -webkit-text-fill-color: transparent; \n      -webkit-background-clip: text;\n      font-weight: bold;\n      font-size: 0;\n      text-transform: uppercase;\n      width:").concat(this.attrs.width, "px;\n      height: ").concat(this.attrs.height, "px;\n      color: ").concat(this.attrs.mainColor, ";\n    }\n\n    .bg2{\n      background: ").concat(this.attrs.mainColor, ";\n      width:").concat(this.attrs.width, "px;\n      height: ").concat(this.attrs.height, "px;\n      position: absolute;\n      left:100%;\n    }\n\n    .bg{\n      background: url(").concat(this.attrs.bgUrl, ");\n      background-position: 50% 50%;\n      width:").concat(this.attrs.width, "px;\n      height: ").concat(this.attrs.height, "px;\n      position: absolute;\n    }\n\n    .circle{\n      width: ", 0, "px;\n      height: ", 0, "px;\n      background: transparent;\n      border-radius: 100%;\n      position: absolute;\n    }\n\n    .circles-wrapper{\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      width:").concat(this.attrs.width, "px;\n      height: ").concat(this.attrs.height, "px;\n    }\n\n    .center-text{\n      font-weight: bold;\n      font-size: ", 100, "px;\n      text-transform: uppercase;\n      color:").concat(this.attrs.mainColor, "\n    }\n\n    .center-text-before,.center-text-after{\n      content: attr(data-text);\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      z-index: -2;\n      opacity: 0.6;\n      font-size: ", 100, "px;\n      font-weight: bold;\n      text-transform: uppercase;\n    }\n\n    .center-text-before{\n      color: #ff00c1;\n    }\n\n    .center-text-after{\n      color: #3498db;\n    }\n\n    .flex-center{\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      width:").concat(this.attrs.width, "px;\n      height: ").concat(this.attrs.height, "px;\n      z-index: 1;\n    }\n\n    .sliced-img-wrapper{\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      width:").concat(this.attrs.width, "px;\n      height: ").concat(this.attrs.height, "px;\n      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);\n      overflow: hidden;\n    }\n\n    .sliced-img{\n      background: url(").concat(this.attrs.bgUrl, ");\n      background-position: 50% 50%;\n      width:").concat(this.attrs.width, "px;\n      height: ").concat(this.attrs.height, "px;\n      position: absolute;\n    }\n\n    .sliced-img::after{\n      content: \"\";\n        display: block;\n        background: linear-gradient(").concat(this.attrs.overlayColor, ");\n        position: absolute;\n        top: 0;\n        bottom: 0;\n        right: 0;\n        left: 0;\n    }\n\n    .stroke-text-center{\n      position: relative;\n      text-transform: uppercase;\n      width:").concat(this.attrs.width, "px;\n      color: ").concat(this.attrs.mainColor, ";\n      font-weight: 900;\n      display: flex;\n      align-items: center;\n      z-index: 1;\n    }\n\n    .stroke-text-wrapper{\n      display:flex;\n      flex-direction: column;\n    }\n\n    .stroke-text-outline{\n      font-size: ").concat(this.attrs.width * 0.3, "px;\n      text-transform: uppercase;\n      width:").concat(this.attrs.width, "px;\n      color: transparent;\n      font-weight: 900;\n      display: flex;\n      align-items: center;\n      -webkit-text-stroke: 3px aquamarine;\n      position: absolute;\n      height:").concat(this.attrs.height / strokeTextList.length, "px;\n    }\n\n    .rng-box::after{\n      content: \"\";\n      display: block;\n      background: linear-gradient(").concat(this.attrs.overlayColor, ");\n      position: absolute;\n      height:").concat(this.attrs.height * 0.08, "px;\n      width: ").concat(this.attrs.width * 0.6, "px;\n      background-size: ").concat(this.attrs.height, "px ").concat(this.attrs.width, "px;\n    }\n\n    .rng-box{\n      position: absolute;\n      height:").concat(this.attrs.height * 0.08, "px;\n      width: ").concat(this.attrs.width * 0.6, "px;\n      top:80%;\n      left:-100%;\n      z-index: 1;\n    }\n    \n    .yellow-underline{\n      position: absolute;\n      height:").concat(this.attrs.height * 0.01, "px;\n      width: ").concat(this.attrs.width * 0.5, "px;\n      top:90%;\n      left:-100%;\n      z-index: 1;\n      background: ").concat(this.attrs.mainColor, ";\n    }\n\n    .yellow-transition{\n      position: absolute;\n      height:").concat(this.attrs.height, "px;\n      width: ").concat(this.attrs.width, "px;\n      top:0%;\n      left:100%;\n      z-index: 1;\n      background: ").concat(this.attrs.mainColor, ";\n    }\n\n    .leftBlackBox,.rightBlackBox{\n      position: absolute;\n      height:").concat(this.attrs.height * 2, "px;\n      width: ").concat(this.attrs.width * 2, "px;\n      background: black;\n      transform: rotate(0deg); \n      z-index: 1;\n      top: -50%;\n    }\n\n    .leftBlackBox{\n      left: -200%;\n    }\n\n    .rightBlackBox{\n      left: 100%\n    }\n  ");
+    return `
+    .wrapper{
+      width: ${this.attrs.width}px;
+      height: ${this.attrs.height}px;
+     
+      display:flex;
+      font-family: 'Poppins', sans-serif;
+    }
+    .box{
+      width: ${this.attrs.width * 0.03}px;
+      height: ${this.attrs.height * 2.4};
+      background: ${this.attrs.mainColor};
+      position:absolute;
+      left: ${this.attrs.width / 2}px;
+    }
+
+    .doted{
+      background-image: radial-gradient(${this.attrs.mainColor} 16%, #0000 20%);
+      background-position: 0 0;
+      background-size: 16px 14px;
+      height: ${this.attrs.height / 4.5}px;
+      width: ${this.attrs.width / 2.7}px;
+      position:absolute;
+      left: 7%;
+      top: 65%
+    }
+
+    .doted,.doted-half{
+      background-image: radial-gradient(${this.attrs.mainColor} 16%, #0000 20%);
+      background-position: 0 0;
+      background-size: 16px 14px;
+      height: ${this.attrs.height / 4.5}px;
+      width: ${this.attrs.width / 2.7}px;
+      position:absolute;
+      left: 7%;
+      top: 65%;
+      opacity: 0;
+    }
+
+    .doted-half{
+      clip-path: polygon(0 31%, 85% 31%, 100% 55%, 15% 55%);
+      left: 65%;
+      top: 7%
+    }
+
+    .lines-wrapper{
+      height: ${this.attrs.height}px;
+      width: ${this.attrs.width}px;
+      position: absolute;
+    }
+
+    .lines{
+      background: ${this.attrs.mainColor};
+      position: absolute;
+    }
+
+    .left-image-wrapper, .right-image-wrapper{
+      width:${this.attrs.width / 2}px;
+      overflow: hidden;
+    }
+  
+    .right-image{
+      height: ${this.attrs.imgHeight}px;
+      width: ${this.attrs.imgWidth}px;
+      position: relative;
+      background-image: url(${this.attrs.bgUrl});
+      background-size: ${this.attrs.imgWidth}px;
+      transform: scale(1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex: 1 0 auto;
+      background-repeat: no-repeat;
+    }
+
+    .left-image{
+      height: ${this.attrs.imgHeight}px;
+      width: ${this.attrs.imgWidth}px;
+      position: relative;
+      background-image: url(${this.attrs.bgUrl});
+      background-size: ${this.attrs.imgWidth}px;
+      transform: scale(1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex: 1 0 auto;
+    }
+
+    .left-image:after,.right-image:after {
+      content: "";
+      display: block;
+      background: linear-gradient(${this.attrs.overlayColor});
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+    }
+    
+    .txt-group{
+      font-size: ${this.attrs.txtGroupSize}px;
+    }
+
+    .txt-group:nth-of-type(odd){
+      height: 14%;
+    }
+
+    .txt-group:nth-of-type(2n+2) {
+      height: 14%;
+    }
+
+    .knockout {
+      background: url(${this.attrs.bgUrl});
+      background-position: 50% 50%;
+      color: red;
+      -webkit-text-fill-color: transparent; 
+      -webkit-background-clip: text;
+      font-weight: bold;
+      font-size: 0;
+      text-transform: uppercase;
+      width:${this.attrs.width}px;
+      height: ${this.attrs.height}px;
+      color: ${this.attrs.mainColor};
+    }
+
+    .bg2{
+      background: ${this.attrs.mainColor};
+      width:${this.attrs.width}px;
+      height: ${this.attrs.height}px;
+      position: absolute;
+      left:100%;
+    }
+
+    .bg{
+      background: url(${this.attrs.bgUrl});
+      background-position: 50% 50%;
+      width:${this.attrs.width}px;
+      height: ${this.attrs.height}px;
+      position: absolute;
+    }
+
+    .circle{
+      width: ${0}px;
+      height: ${0}px;
+      background: transparent;
+      border-radius: 100%;
+      position: absolute;
+    }
+
+    .circles-wrapper{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:${this.attrs.width}px;
+      height: ${this.attrs.height}px;
+    }
+
+    .center-text{
+      font-weight: bold;
+      font-size: ${100}px;
+      text-transform: uppercase;
+      color:${this.attrs.mainColor}
+    }
+
+    .center-text-before,.center-text-after{
+      content: attr(data-text);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -2;
+      opacity: 0.6;
+      font-size: ${100}px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .center-text-before{
+      color: #ff00c1;
+    }
+
+    .center-text-after{
+      color: #3498db;
+    }
+
+    .flex-center{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:${this.attrs.width}px;
+      height: ${this.attrs.height}px;
+      z-index: 1;
+    }
+
+    .sliced-img-wrapper{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:${this.attrs.width}px;
+      height: ${this.attrs.height}px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+      overflow: hidden;
+    }
+
+    .sliced-img{
+      background: url(${this.attrs.bgUrl});
+      background-position: 50% 50%;
+      width:${this.attrs.width}px;
+      height: ${this.attrs.height}px;
+      position: absolute;
+    }
+
+    .sliced-img::after{
+      content: "";
+        display: block;
+        background: linear-gradient(${this.attrs.overlayColor});
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .stroke-text-center{
+      position: relative;
+      text-transform: uppercase;
+      width:${this.attrs.width}px;
+      color: ${this.attrs.mainColor};
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .stroke-text-wrapper{
+      display:flex;
+      flex-direction: column;
+    }
+
+    .stroke-text-outline{
+      font-size: ${this.attrs.width * 0.3}px;
+      text-transform: uppercase;
+      width:${this.attrs.width}px;
+      color: transparent;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      -webkit-text-stroke: 3px aquamarine;
+      position: absolute;
+      height:${this.attrs.height / strokeTextList.length}px;
+    }
+
+    .rng-box::after{
+      content: "";
+      display: block;
+      background: linear-gradient(${this.attrs.overlayColor});
+      position: absolute;
+      height:${this.attrs.height * 0.08}px;
+      width: ${this.attrs.width * 0.6}px;
+      background-size: ${this.attrs.height}px ${this.attrs.width}px;
+    }
+
+    .rng-box{
+      position: absolute;
+      height:${this.attrs.height * 0.08}px;
+      width: ${this.attrs.width * 0.6}px;
+      top:80%;
+      left:-100%;
+      z-index: 1;
+    }
+    
+    .yellow-underline{
+      position: absolute;
+      height:${this.attrs.height * 0.01}px;
+      width: ${this.attrs.width * 0.5}px;
+      top:90%;
+      left:-100%;
+      z-index: 1;
+      background: ${this.attrs.mainColor};
+    }
+
+    .yellow-transition{
+      position: absolute;
+      height:${this.attrs.height}px;
+      width: ${this.attrs.width}px;
+      top:0%;
+      left:100%;
+      z-index: 1;
+      background: ${this.attrs.mainColor};
+    }
+
+    .leftBlackBox,.rightBlackBox{
+      position: absolute;
+      height:${this.attrs.height * 2}px;
+      width: ${this.attrs.width * 2}px;
+      background: black;
+      transform: rotate(0deg); 
+      z-index: 1;
+      top: -50%;
+    }
+
+    .leftBlackBox{
+      left: -200%;
+    }
+
+    .rightBlackBox{
+      left: 100%
+    }
+  `;
   }
 
   buildTree() {
     const box = new motorcortex.CSSEffect({
       animatedAttrs: {
-        top: "-".concat(this.attrs.height * 0.1, "px"),
-        height: "".concat(this.attrs.height * 0.1, "px")
+        top: `-${this.attrs.height * 0.1}px`,
+        height: `${this.attrs.height * 0.1}px`
       },
       initialValues: {
-        top: "".concat(this.attrs.height, "px"),
-        height: "".concat(this.attrs.height / 2.5, "px")
+        top: `${this.attrs.height}px`,
+        height: `${this.attrs.height / 2.5}px`
       },
       attrs: {}
     }, {
@@ -81,11 +469,11 @@ class BannerA extends motorcortex.HTMLClip {
     });
     const leftImageTop = new motorcortex.CSSEffect({
       animatedAttrs: {
-        backgroundPositionY: "".concat(this.attrs.height - this.attrs.imgHeight / 2, "px"),
+        backgroundPositionY: `${this.attrs.height - this.attrs.imgHeight / 2}px`,
         top: "-50%"
       },
       initialValues: {
-        backgroundPositionY: "".concat(this.attrs.height - this.attrs.imgHeight / 2 + this.attrs.height, "px"),
+        backgroundPositionY: `${this.attrs.height - this.attrs.imgHeight / 2 + this.attrs.height}px`,
         top: "-150%"
       }
     }, {
@@ -95,11 +483,11 @@ class BannerA extends motorcortex.HTMLClip {
     });
     const leftImageLeft = new motorcortex.CSSEffect({
       animatedAttrs: {
-        backgroundPositionX: "-".concat(this.attrs.imgWidth / 2 - this.attrs.width + this.attrs.width / 4, "px "),
+        backgroundPositionX: `-${this.attrs.imgWidth / 2 - this.attrs.width + this.attrs.width / 4}px `,
         left: "-50%"
       },
       initialValues: {
-        backgroundPositionX: "-".concat(this.attrs.imgWidth / 2 - this.attrs.width + this.attrs.width / 4 + this.attrs.width / 2, "px "),
+        backgroundPositionX: `-${this.attrs.imgWidth / 2 - this.attrs.width + this.attrs.width / 4 + this.attrs.width / 2}px `,
         left: "100%"
       }
     }, {
@@ -109,11 +497,11 @@ class BannerA extends motorcortex.HTMLClip {
     });
     const rightImageTop = new motorcortex.CSSEffect({
       animatedAttrs: {
-        backgroundPositionY: "".concat(this.attrs.height - this.attrs.imgHeight / 2, "px"),
+        backgroundPositionY: `${this.attrs.height - this.attrs.imgHeight / 2}px`,
         top: "-50%"
       },
       initialValues: {
-        backgroundPositionY: "-".concat((this.attrs.height - this.attrs.imgHeight / 2) * 4, "px"),
+        backgroundPositionY: `-${(this.attrs.height - this.attrs.imgHeight / 2) * 4}px`,
         top: "100%"
       }
     }, {
@@ -123,11 +511,11 @@ class BannerA extends motorcortex.HTMLClip {
     });
     const rightImageLeft = new motorcortex.CSSEffect({
       animatedAttrs: {
-        backgroundPositionX: "-".concat(this.attrs.imgWidth / 2 - this.attrs.width, "px"),
+        backgroundPositionX: `-${this.attrs.imgWidth / 2 - this.attrs.width}px`,
         left: "-200%"
       },
       initialValues: {
-        backgroundPositionX: "-".concat(this.attrs.imgWidth / 2 - this.attrs.width, "px"),
+        backgroundPositionX: `-${this.attrs.imgWidth / 2 - this.attrs.width}px`,
         left: "-400%"
       }
     }, {
@@ -137,10 +525,10 @@ class BannerA extends motorcortex.HTMLClip {
     });
     const rightImageLeftWrapper = new motorcortex.CSSEffect({
       animatedAttrs: {
-        width: "".concat(this.attrs.width / 2, "px")
+        width: `${this.attrs.width / 2}px`
       },
       initialValues: {
-        width: "".concat(this.attrs.width / 2 * 0.02, "px")
+        width: `${this.attrs.width / 2 * 0.02}px`
       }
     }, {
       duration: 200,
@@ -224,7 +612,7 @@ class BannerA extends motorcortex.HTMLClip {
     for (let i = 0; i < this.n; i++) {
       const textAnimationSize = new motorcortex.CSSEffect({
         animatedAttrs: {
-          fontSize: !this.attrs.txtGroupSize ? "".concat(this.attrs.width * 0.2, "px") : "".concat(this.attrs.txtGroupSize, "px"),
+          fontSize: !this.attrs.txtGroupSize ? `${this.attrs.width * 0.2}px` : `${this.attrs.txtGroupSize}px`,
           marginLeft: i % 2 !== 1 ? "14%" : "6%"
         },
         initialValues: {
@@ -263,7 +651,7 @@ class BannerA extends motorcortex.HTMLClip {
     const linesInOut = new motorcortex.CSSEffect({
       animatedAttrs: {
         left: "-100%",
-        width: "".concat(this.attrs.width / 2 * 0.1, "px")
+        width: `${this.attrs.width / 2 * 0.1}px`
       },
       initialValues: {
         left: "100%"
@@ -300,17 +688,17 @@ class BannerA extends motorcortex.HTMLClip {
     const circlesGroup = new motorcortex.Group();
 
     for (let i = 1; i <= 3; i++) {
-      const ran = "".concat(Math.random() * 360 + "deg");
+      const ran = `${Math.random() * 360 + "deg"}`;
       const translateX = new motorcortex.CSSEffect({
         animatedAttrs: {
           transform: {
             rotate: ran,
-            translateX: "".concat(this.attrs.width / 2 * Math.random(), "px"),
-            translateY: "".concat(this.attrs.width / 2 * Math.random(), "px")
+            translateX: `${this.attrs.width / 2 * Math.random()}px`,
+            translateY: `${this.attrs.width / 2 * Math.random()}px`
           },
-          width: "".concat(this.attrs.width * 0.2, "px"),
-          height: "".concat(this.attrs.width * 0.2, "px"),
-          border: " ".concat(0, "px solid ", this.attrs.mainColor)
+          width: `${this.attrs.width * 0.2}px`,
+          height: `${this.attrs.width * 0.2}px`,
+          border: ` ${0}px solid ${this.attrs.mainColor}`
         },
         initialValues: {
           transform: {
@@ -320,7 +708,7 @@ class BannerA extends motorcortex.HTMLClip {
           },
           width: "0px",
           height: "0px",
-          border: " ".concat(this.attrs.width * 0.05, "px solid ").concat(this.attrs.mainColor)
+          border: ` ${this.attrs.width * 0.05}px solid ${this.attrs.mainColor}`
         }
       }, {
         duration: 500,
@@ -468,14 +856,14 @@ class BannerA extends motorcortex.HTMLClip {
     });
     const strokeTextCenter = new motorcortex.CSSEffect({
       animatedAttrs: {
-        fontSize: "".concat(this.attrs.width * 0.15, "px"),
+        fontSize: `${this.attrs.width * 0.15}px`,
         left: "5%",
-        height: "".concat(this.attrs.width * 0.15, "px")
+        height: `${this.attrs.width * 0.15}px`
       },
       initialValues: {
-        fontSize: "".concat(0, "px"),
+        fontSize: `${0}px`,
         left: "50%",
-        height: "".concat(this.attrs.width * 0.15 * 3, "px")
+        height: `${this.attrs.width * 0.15 * 3}px`
       }
     }, {
       duration: 500,
@@ -487,10 +875,10 @@ class BannerA extends motorcortex.HTMLClip {
     for (let i = 0; i < this.strokeTextLength; i++) {
       const strokeTextOutline = new motorcortex.CSSEffect({
         animatedAttrs: {
-          left: i % 2 !== 1 ? "-".concat(this.attrs.width * 0.1, "px") : "".concat(this.attrs.width * 0.1, "px")
+          left: i % 2 !== 1 ? `-${this.attrs.width * 0.1}px` : `${this.attrs.width * 0.1}px`
         },
         initialValues: {
-          left: i % 2 === 1 ? "-".concat(this.attrs.width * 0.5, "px") : "".concat(this.attrs.width * 0.5, "px")
+          left: i % 2 === 1 ? `-${this.attrs.width * 0.5}px` : `${this.attrs.width * 0.5}px`
         }
       }, {
         duration: 3000 + 80 * (i + 1),
@@ -611,17 +999,17 @@ class BannerA extends motorcortex.HTMLClip {
     });
 
     for (let i = 1; i <= 3; i++) {
-      const ran = "".concat(Math.random() * 360 + "deg");
+      const ran = `${Math.random() * 360 + "deg"}`;
       const translateX = new motorcortex.CSSEffect({
         animatedAttrs: {
           transform: {
             rotate: ran,
-            translateX: "".concat(this.attrs.width / 2 * Math.random(), "px"),
-            translateY: "".concat(this.attrs.width / 2 * Math.random(), "px")
+            translateX: `${this.attrs.width / 2 * Math.random()}px`,
+            translateY: `${this.attrs.width / 2 * Math.random()}px`
           },
-          width: "".concat(this.attrs.width * 0.2, "px"),
-          height: "".concat(this.attrs.width * 0.2, "px"),
-          border: " ".concat(0, "px solid yellow")
+          width: `${this.attrs.width * 0.2}px`,
+          height: `${this.attrs.width * 0.2}px`,
+          border: ` ${0}px solid yellow`
         },
         initialValues: {
           transform: {
@@ -631,7 +1019,7 @@ class BannerA extends motorcortex.HTMLClip {
           },
           width: "0px",
           height: "0px",
-          border: " ".concat(this.attrs.width * 0.05, "px solid yellow")
+          border: ` ${this.attrs.width * 0.05}px solid yellow`
         }
       }, {
         duration: 500,
