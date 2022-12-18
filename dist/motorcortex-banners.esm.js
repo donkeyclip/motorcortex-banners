@@ -4,55 +4,42 @@ class BannerA extends HTMLClip {
   dinamicFontSize(lc, width) {
     let fontsize;
     fontsize = width / 0.6 / lc;
-
     if (fontsize >= 200 && width === 720) {
       fontsize = 200;
     }
-
     if (fontsize >= 100 && width === 360) {
       fontsize = 100;
     }
-
     return fontsize;
   }
-
   get font() {
     return [{
       type: `google-font`,
       src: `https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,800;1,700;1,800;1,900&display=swap`
     }];
   }
-
   get html() {
     var _this = this;
-
     const textlist = (() => {
       const list = [];
       const n = Math.floor(this.attrs.height / (this.attrs.width * 0.2));
       this.n = n;
-
       for (let i = 0; i < n; i++) {
         list.push(`<div class="txt-group txt-${i}">${this.attrs.txtGroup}</div>`);
       }
-
       return list.join("");
     })();
-
     const strokeTextList = this.attrs.strokeText.split(" ");
     this.strokeTextLength = strokeTextList.length;
-
     const textlistStroke = function (className) {
       let style = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       const list = [];
-
       for (let i = 0; i < strokeTextList.length; i++) {
         list.push(`
           <div style="${style === true ? `top:${_this.attrs.height / strokeTextList.length * i}px;` : " "}" class="${className}${i}">${strokeTextList[i]}</div>`);
       }
-
       return list.join("");
     };
-
     return `
     <div class="wrapper">
       <div class="left-image-wrapper">
@@ -128,7 +115,6 @@ class BannerA extends HTMLClip {
 	  </div>
     `;
   }
-
   get css() {
     const strokeTextList = this.attrs.strokeText.split(" ");
     return `
@@ -447,7 +433,6 @@ class BannerA extends HTMLClip {
     }
   `;
   }
-
   buildTree() {
     const box = new CSSEffect({
       animatedAttrs: {
@@ -606,7 +591,6 @@ class BannerA extends HTMLClip {
       easing: "easeOutQuart"
     });
     const myGroup = new Group();
-
     for (let i = 0; i < this.n; i++) {
       const textAnimationSize = new CSSEffect({
         animatedAttrs: {
@@ -624,7 +608,6 @@ class BannerA extends HTMLClip {
       });
       myGroup.addIncident(textAnimationSize, 500 + 50 * (i + 1));
     }
-
     const bg2OutBg = new CSSEffect({
       animatedAttrs: {
         width: "0px"
@@ -684,7 +667,6 @@ class BannerA extends HTMLClip {
       easing: "easeOutQuart"
     });
     const circlesGroup = new Group();
-
     for (let i = 1; i <= 3; i++) {
       const ran = `${Math.random() * 360 + "deg"}`;
       const translateX = new CSSEffect({
@@ -715,7 +697,6 @@ class BannerA extends HTMLClip {
       });
       circlesGroup.addIncident(translateX, 500 + 50 * (i + 1));
     }
-
     const centerTextWrapper = new CSSEffect({
       animatedAttrs: {
         transform: {
@@ -869,7 +850,6 @@ class BannerA extends HTMLClip {
       easing: "easeOutQuart"
     });
     const strokeTextGroup = new Group();
-
     for (let i = 0; i < this.strokeTextLength; i++) {
       const strokeTextOutline = new CSSEffect({
         animatedAttrs: {
@@ -884,7 +864,6 @@ class BannerA extends HTMLClip {
       });
       strokeTextGroup.addIncident(strokeTextOutline, 500);
     }
-
     const bgDistortionOp = new CSSEffect({
       animatedAttrs: {
         opacity: 0
@@ -995,7 +974,6 @@ class BannerA extends HTMLClip {
       selector: ".circles-wrapper",
       easing: "easeOutQuart"
     });
-
     for (let i = 1; i <= 3; i++) {
       const ran = `${Math.random() * 360 + "deg"}`;
       const translateX = new CSSEffect({
@@ -1026,7 +1004,6 @@ class BannerA extends HTMLClip {
       });
       circlesGroup2.addIncident(translateX, 500 + 50 * (i + 1));
     }
-
     const blackBoxRotate = new CSSEffect({
       animatedAttrs: {
         transform: {
@@ -1110,7 +1087,6 @@ class BannerA extends HTMLClip {
     this.addIncident(blackBoxLeftTop, 6000);
     this.addIncident(blackBoxRightTop, 6000);
   }
-
 }
 
 const BannerAValidation = {
@@ -1168,7 +1144,8 @@ var index = {
   incidents: [{
     exportable: BannerA,
     name: "BannerA",
-    attributesValidationRules: { ...BannerAValidation
+    attributesValidationRules: {
+      ...BannerAValidation
     }
   }]
 };
