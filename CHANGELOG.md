@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.0 (2024-01-27)
+
+
+### Features
+
+* declare mc 8 as compatible ([51a583c](https://github.com/donkeyclip/motorcortex-banners/commit/51a583cc407b615d51c3be8323588c7beb37daad))
+* drop explorer 11 support ([23f9b9b](https://github.com/donkeyclip/motorcortex-banners/commit/23f9b9b3958dcd964f51bbfe28b7681b125b3f1c))
+* update compatibility with motorcortex ([0643f7a](https://github.com/donkeyclip/motorcortex-banners/commit/0643f7a10413c841ed7095b31b635874e8012989))
+
+
+### Bug Fixes
+
+* delete commitlint.config.js ([2e3ec45](https://github.com/donkeyclip/motorcortex-banners/commit/2e3ec45b94630198738279b56faf9f66b7983a98))
+* remove anime plugin and fix demo ([8c232ad](https://github.com/donkeyclip/motorcortex-banners/commit/8c232ad4bd2e852650c1eaa67c940b7f3d39d8ae))
+
 ## [0.2.0](https://github.com/donkeyclip/motorcortex-banners/compare/v0.1.0...v0.2.0) (2022-04-07)
 
 
